@@ -1,0 +1,208 @@
+.slider {
+	margin: 50px 0 100px;
+
+	&__img-wrapper {
+		padding: 90px 0;
+	}
+
+	&__img {
+		margin: -15px;
+		padding: 15px;
+		border: 1px solid $orange;
+		position: relative;
+
+		&::after,
+		&::before {
+			content: '';
+			background: #fff;
+			z-index: 0;
+		}
+
+		&::before {
+			@include abs(25%, -2px, 25%, -2px);
+		}
+
+		&::after {
+			@include abs(-2px, 25%, -2px, 25%);
+		}
+
+		img {
+			display: block;
+			border: inherit;
+			position: relative;
+			z-index: 1;
+			//width: 100%;
+			//border: 1px solid $orange;
+		}
+	}
+
+	&__divider {
+		@include size(1px, 100%);
+		background: $orange;
+		margin: 0 auto;
+	}
+
+	&__content {
+		padding-top: 90px;
+		text-align: center;
+	}
+
+	&__pagination {
+		text-align: center;
+		margin-top: 40px;
+	}
+
+	&__pagination-item {
+		@include size(15px);
+		border-radius: 50%;
+		display: inline-block;
+		background: $orange;
+		border: 1px solid #fff;
+		cursor: pointer;
+		margin: 0 5px;
+	}
+
+	&__pagination-item--active,
+	&__pagination-item:hover {
+		background: #fff;
+		border-color: $orange;
+	}
+
+	&__sur-name {
+		font: 900 36px $roboto;
+		color: $grey;
+		letter-spacing: .2px;
+		margin-bottom: 60px;
+		position: relative;
+	}
+
+	&__sur-name::after {
+		content: "";
+		@include size(100px, 1px);
+		background: $orange;
+		@include abs(50%, $bottom: -30px);
+		transform: translateX(-50%);
+	}
+
+	&__position {
+		font-size: 24px;
+		color: $grey;
+		margin-bottom: 25px;
+	}
+
+	&__social {
+		font-size: 0;
+		margin-bottom: 30px;
+	}
+
+	&__item {
+		margin-right: 5px;
+	}
+
+	&__item--margin {
+		margin-right: 0;
+	}
+
+	&__item,
+	&__link {
+		display: inline-block;
+		transition: transform .5s linear;
+	}
+
+	&__item:hover {
+		transform: rotate(360deg);
+	}
+
+	&__link {
+		@include size(31px);
+	}
+
+	&__link--img-1 {
+		@include backgr('../images/f.svg');
+	}
+
+	&__link--img-2 {
+		@include backgr('../images/tw.svg');
+	}
+
+	&__link--img-3 {
+		@include backgr('../images/g.svg');
+	}
+
+	&__link--img-4 {
+		@include backgr('../images/in.svg');
+		}
+
+	&__text {
+		@include fw(14px, 500);
+		line-height: 24px;
+		color: #333;
+		margin-bottom: 50px;
+		position: relative;
+	}
+
+	&__text::after {
+		content: "";
+		@include size(50px, 4px);
+		background: $orange;
+		@include abs(50%, $bottom: -25px);
+		transform: translateX(-50%);
+	}
+
+	&__button {
+		display: inline-block;
+		position: relative;
+		width: 120px;
+		padding: 4px 9px;
+		border: 1px solid $orange;
+		font: 700 14px $opensans;
+		color: $grey;
+		text-transform: uppercase;
+		cursor: pointer;
+	}
+
+	&__button:hover {
+		border-style: dashed;
+	}
+	
+	&__button::after,
+	&__button::before {
+		content: "";
+		@include size(5px, 4px);
+		background: #fff;
+	}
+
+	&__button::after {
+		@include abs(44px, -30px);
+	}
+
+	&__button::before {
+		@include abs(69px, -30px);
+	}
+
+	.arrow-left,
+	.arrow-right {
+		width: 18px;
+		position: relative;
+		top: 45%;
+		cursor: pointer;
+	}
+
+	.arrow-left path,
+	.arrow-right path {
+		fill: $orange;
+	}
+
+	.arrow-left path:hover,
+	.arrow-right path:hover {
+		fill-opacity: 0.5;
+	}
+
+	.arrow-left {
+		left: 12px;
+	}
+
+	.arrow-right {
+		right: -12px;
+	} 
+}
